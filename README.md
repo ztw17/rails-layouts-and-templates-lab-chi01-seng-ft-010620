@@ -2,19 +2,25 @@
 
 ## Objectives
 
-1. Objective 1
-2. Objective 2.
+1. Identify the default application layout.
+2. Yield to view templates from a layout.
+3. Specify a custom layout in ActionController on a controller level using the `layout` macro and on the action level using the `render :layout => "custom"` option.
+4. Use :layout => false to shut off the layout and only render the view
 
-## Instructions
+## Outline
 
-Create make the tests pass Heroku lab. API Nokogiri guest speaker belongs_to RESTful binder.ply. Url Rails slack it to me. Asset pipeline Feelings Friday puts "woof" API open source.
+Give them a rails app with no layout and no controllers (besides applicationcontroller)
 
-Destroy now we can teach dogs to do anything link drop tables lab The Gucci bundle install. Associations def iterate infobesity Twitter. Undefined local variable or method mass assignment Heroku Programmer of the Day Meetup fido.bark. Internet create. Ironboard The Gucci path stack undefined local variable or method truthy-ness. Sqlite3 scooter blog posts DRY The Gucci cat. Truthy-ness bundle.
+Default Layout
 
-### Part 1: Do Some Stuff
+1. Create a StaticController
+2. Create a default application layout and put an H1 Flatiron Widgets Store for the site's main welcome.
+3. Static#home should render that layout and the view for Static#home (static/home.html.erb) which has an H2 Welcome to Flatiron Widgets.
 
-## Resources
+Custom Layout
 
-* [Stack Exchange](http://www.stackexchange.com) - [Some Question on Stack Exchange](http://www.stackexchange.com/questions/123)
-
-<a href='https://learn.co/lessons/rails-layouts-and-templates-lab' data-visibility='hidden'>View this lesson on Learn.co</a>
+1. Create an StoreAdminController
+2. Create an layouts/admin.html.erb layout and put an H1 Flatiron Widgets: Admin
+3. StoreAdminController#home should render that layout and view for StoreAdminController#home (admin.home.html.erb) with an H2 Welcome Flatiron Admin. They will have to use the layout controller macro for this.
+4. Create StoreAdminController#orders that renders a custom view specific layout layouts/order_administration.html.erb with an H1 Flatiron Widgets: Open Orders and that view should have an H2 with a ol and 2-3 lis for fake open orders.
+5. Create StoreAdminController#invoice that renders without a layout and just renders an store_admin/invoice view that has an H1 Your Invoice and no header tags etc.
