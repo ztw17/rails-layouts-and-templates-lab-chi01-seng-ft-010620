@@ -9,7 +9,7 @@
 
 ## Outline
 
-Give them a rails app with no layout and no controllers (besides applicationcontroller)
+Give them a rails app with no layout and no controllers (besides applicationcontroller). There should be working models though. Pretty much making a shopping cart.
 
 Default Layout
 
