@@ -25,4 +25,14 @@ RSpec.describe StoreAdminController, type: :controller do
       assert_select "ol"
     end
   end
+
+  describe "GET invoice" do
+    it "renders the invoice template without any layout" do
+      get :invoice
+      expect(response).to render_template("invoice")
+      assert_template layout: false
+
+      assert_select "h1", "Your Invoice"
+    end
+  end
 end
