@@ -21,7 +21,7 @@ RSpec.describe StoreAdminController, type: :controller do
       expect(response).to render_template("layouts/order_administration")
 
       assert_select "h1", "Flatiron Widgets: Open Orders"
-      assert_select "h2"
+      assert_select "h2", "Welcome to Flatiron Open Orders"
       assert_select "ol"
     end
   end
