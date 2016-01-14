@@ -9,18 +9,16 @@
 
 ## Outline
 
-Give them a rails app with no layout and no controllers (besides applicationcontroller). There should be working models though. Pretty much making a shopping cart.
-
 Default Layout
 
 1. Create a StaticController
-2. Create a default application layout and put an H1 Flatiron Widgets Store for the site's main welcome.
-3. Static#home should render that layout and the view for Static#home (static/home.html.erb) which has an H2 Welcome to Flatiron Widgets.
+2. Create a default application layout and put an H1 Flatiron Widgets Store for the site's main welcome
+3. Static#home should render that layout and the view for Static#home (static/home.html.erb) which has an H2 Welcome to Flatiron Widgets
 
 Custom Layout
 
-1. Create an StoreAdminController
-2. Create an layouts/admin.html.erb layout and put an H1 Flatiron Widgets: Admin
-3. StoreAdminController#home should render that layout and view for StoreAdminController#home (admin.home.html.erb) with an H2 Welcome Flatiron Admin. They will have to use the layout controller macro for this.
-4. Create StoreAdminController#orders that renders a custom view specific layout layouts/order_administration.html.erb with an H1 Flatiron Widgets: Open Orders and that view should have an H2 with a ol and 2-3 lis for fake open orders.
-5. Create StoreAdminController#invoice that renders without a layout and just renders an store_admin/invoice view that has an H1 Your Invoice and no header tags etc.
+1. Create a StoreAdminController
+2. Create a layouts/admin.html.erb layout and put an H1 Flatiron Widgets: Admin
+3. StoreAdminController#home should render that layout and view for StoreAdminController#home (admin.home.html.erb) with an H2 Welcome Flatiron Admin. They will have to use the layout controller macro for this
+4. Create StoreAdminController#orders that renders a custom view specific layout layouts/order_administration.html.erb with an H1 Flatiron Widgets: Open Orders and that view should have an H2 with a ol and 2-3 lis for fake open orders
+5. Create StoreAdminController#invoice that renders without a layout and just renders a store_admin/invoice view that has an H1 Your Invoice and no header tags etc
