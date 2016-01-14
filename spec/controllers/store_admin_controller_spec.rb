@@ -1,38 +1,42 @@
 require 'rails_helper'
 
 RSpec.describe StoreAdminController, type: :controller do
+  include Capybara::DSL
   render_views
 
   describe "GET home" do
     it "renders the home template with admin layout" do
-      get :home
+      visit 'admin/home'
+
       expect(response).to render_template("home")
       expect(response).to render_template("layouts/admin")
 
-      assert_select "h1", "Flatiron Widgets: Admin"
-      assert_select "h2", "Welcome Flatiron Admin"
+      expect(page.find("h1").text).to eq("Flatiron Widgets: Admin")
+      expect(page.find("h2").text).to eq("Welcome Flatiron Admin")
     end
   end
 
   describe "GET orders" do
     it "renders the orders template with order_administration layout" do
-      get :orders
+      visit 'admin/orders'
+
       expect(response).to render_template("orders")
       expect(response).to render_template("layouts/order_administration")
 
-      assert_select "h1", "Flatiron Widgets: Open Orders"
-      assert_select "h2", "Welcome to Flatiron Open Orders"
-      assert_select "ol"
+      expect(page.find("h1").text).to eq("Flatiron Widgets: Open Orders")
+      expect(page.find("h2").text).to eq("Welcome to Flatiron Open Orders")
+      expect(page.all("ol li").size).to be >= 1
     end
   end
 
   describe "GET invoice" do
     it "renders the invoice template without any layout" do
-      get :invoice
+      visit 'admin/invoice'
+
       expect(response).to render_template("invoice")
       assert_template layout: false
 
-      assert_select "h1", "Your Invoice"
+      expect(page.find("h1").text).to eq("Your Invoice")
     end
   end
 end
