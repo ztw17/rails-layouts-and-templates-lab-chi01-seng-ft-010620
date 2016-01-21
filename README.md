@@ -8,13 +8,13 @@ Your task is to build an online store! Okay, maybe not a whole online store, but
 ## The Default Layout
 
 1. Make a new controller called `StaticController`
-2. Create a home action with an `h2` that says "Welcome to Flatiron Widgets" Create a new action in `StaticController` called `home`
-3. Create a default application layout at the correct location and add an `h1` to it that says "Flatiron Widgets Store", this is for the main site's welcome
+2. Create a home action with an `h2` that says "Welcome to Flatiron Widgets" and a new action in `StaticController` called `home`
+3. Create a default application layout at the correct location and add an `h1` to it that says "Flatiron Widgets Store", this is for the main site's welcome bar
 
 ## Custom Layouts for a Controller
 
 1. Create a new controller called `StoreAdminController`
-2. We want this controller to use a new layout called `admin`, which you need to create in the correct place, this layout should have an `h1` that says "Flatiron Widgets: Admin"
+2. We want this controller to use a new layout called `admin`. This layout should have an `h1` that says "Flatiron Widgets: Admin"
 3. Create a home action in `StoreAdminController` with an `h2` that says  "Welcome Flatiron Admin"
 4. Get your newly created action to use the `admin` template
 
