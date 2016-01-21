@@ -2,25 +2,29 @@
 
 ## Objectives
 
-1. Identify the default application layout.
-2. Yield to view templates from a layout.
-3. Specify a custom layout in ActionController on a controller level using the `layout` macro and on the action level using the `render :layout => "custom"` option.
-4. Use :layout => false to shut off the layout and only render the view
 
-## Outline
+Your task is to build an online store! Okay, maybe not a whole online store, but at least some layouts and controllers for an online store. Not only will you learn how to create a layout and how to get an action to use that layout, but also how to override defaults and specify layouts on an action level.
 
-Give them a rails app with no layout and no controllers (besides applicationcontroller). There should be working models though. Pretty much making a shopping cart.
+## The Default Layout
 
-Default Layout
+1. Make a new controller called `StaticController`
+2. Create a home action with an `h2` that says "Welcome to Flatiron Widgets" Create a new action in `StaticController` called `home`
+3. Create a default application layout at the correct location and add an `h1` to it that says "Flatiron Widgets Store", this is for the main site's welcome
 
-1. Create a StaticController
-2. Create a default application layout and put an H1 Flatiron Widgets Store for the site's main welcome.
-3. Static#home should render that layout and the view for Static#home (static/home.html.erb) which has an H2 Welcome to Flatiron Widgets.
+## Custom Layouts for a Controller
 
-Custom Layout
+1. Create a new controller called `StoreAdminController`
+2. We want this controller to use a new layout called `admin`, which you need to create in the correct place, this layout should have an `h1` that says "Flatiron Widgets: Admin"
+3. Create a home action in `StoreAdminController` with an `h2` that says  "Welcome Flatiron Admin"
+4. Get your newly created action to use the `admin` template
 
-1. Create an StoreAdminController
-2. Create an layouts/admin.html.erb layout and put an H1 Flatiron Widgets: Admin
-3. StoreAdminController#home should render that layout and view for StoreAdminController#home (admin.home.html.erb) with an H2 Welcome Flatiron Admin. They will have to use the layout controller macro for this.
-4. Create StoreAdminController#orders that renders a custom view specific layout layouts/order_administration.html.erb with an H1 Flatiron Widgets: Open Orders and that view should have an H2 with a ol and 2-3 lis for fake open orders.
-5. Create StoreAdminController#invoice that renders without a layout and just renders an store_admin/invoice view that has an H1 Your Invoice and no header tags etc.
+## Custom Layouts for an Action
+
+1. Create a new action in `StoreAdminController` called `orders`, with an `h2` that says "Welcome to Flatiron Open Orders". Also add an `ol` with a few `li` elements containing fake orders.
+2. Now you should create a new layout called `order_administration`, and add an `h1` that says "Flatiron Widgets: Open Orders"
+3. At this point the store_admin#orders action will use the `admin` layout you defined earlier, but we need it to use the new `order_administration` layout. The trick is, we want only the `store_admin#orders` action to use the `order_administration` layout, and keep the `admin` layout as the default for the other actions in `StoreAdminController`.
+
+## Ignore Layouts for an Action
+
+1. Create a new action in `StoreAdminController` called `invoice`, and insert an `h1` containing that says "Your Invoice"
+2. At this point this action will use the default layout for the controller, which is `admin`. We need this specific `invoice` action to not use any layout at all, while not affecting the other actions in the controller.
