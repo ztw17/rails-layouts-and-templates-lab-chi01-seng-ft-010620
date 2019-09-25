@@ -32,7 +32,7 @@ also how to override defaults and specify layouts on the action level.
 
 ## Custom Layouts for an Action
 
-1. Create a new view in `StoreAdminController` called `orders` with an `h2` that
+1. Create a new view for `StoreAdminController` called `orders` with an `h2` that
    says "Welcome to Flatiron Open Orders". Also add an `ol` with a few `li`
    elements containing fake orders.
 
