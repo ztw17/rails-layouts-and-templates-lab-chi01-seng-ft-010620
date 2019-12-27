@@ -37,7 +37,7 @@ Your task is to build an online store! Okay, maybe not a whole online store, but
 1. Create a new action in `StoreAdminController` called `orders`, with an `h2` that says "Welcome to Flatiron Open Orders". Also add an `ol` with a few `li` elements containing fake orders.
 2. Now you should create a new layout called `order_administration`, and add an `h1` that says "Flatiron Widgets: Open Orders"
 3. At this point the store_admin#orders action will use the `admin` layout you defined earlier, but we need it to use the new `order_administration` layout. The trick is, we want only the `store_admin#orders` action to use the `order_administration` layout, and keep the `admin` layout as the default for the other actions in `StoreAdminController`.
->>>>>>> adressed issues raised in review - much better!
+>>>>>>> 45ced8f27224f943423f5b003a158889df6df42a
 
 ## Ignore Layouts for an Action
 
